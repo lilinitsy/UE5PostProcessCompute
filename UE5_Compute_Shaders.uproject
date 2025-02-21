@@ -3,6 +3,16 @@
 	"EngineAssociation": "{DD440672-4CB2-1A7A-0FA9-C3BD7D5A3B89}",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "UE5_Compute_Shaders",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "OpenXR",
