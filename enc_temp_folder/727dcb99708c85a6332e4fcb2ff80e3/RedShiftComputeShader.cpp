@@ -17,7 +17,7 @@ DECLARE_STATS_GROUP(TEXT("RedShiftComputeShader"), STATGROUP_RedShiftComputeShad
 DECLARE_CYCLE_STAT(TEXT("RedShiftComputeShader Execute"), STAT_RedShiftComputeShader_Execute, STATGROUP_RedShiftComputeShader);
 
 // This class carries our parameter declarations and acts as the bridge between cpp and HLSL.
-class COMPUTESHADER_API FRedShiftComputeShader : public FGlobalShader
+class COMPUTESHADER_API FRedShiftComputeShader: public FGlobalShader
 {
 public:
 	
@@ -176,7 +176,7 @@ void FRedShiftComputeShaderInterface::DispatchRenderThread(FRHICommandListImmedi
 			
 		} else {
 			#if WITH_EDITOR
-				GEngine->AddOnScreenDebugMessage((uint64)42145125184, 6.f, FColor::Red, FString(TEXT("RedShiftComputeShader has a problem.")));
+				GEngine->AddOnScreenDebugMessage((uint64)42145125184, 6.f, FColor::Red, FString(TEXT("The compute shader has a problem.")));
 			#endif
 
 			// We exit here as we don't want to crash the game if the shader is not found or has an error.
