@@ -12,7 +12,8 @@ public class ComputeShader: ModuleRules
 		PrivateIncludePaths.AddRange(new string[] 
 		{
 			"Runtime/Renderer/Private",
-			"ComputeShader/Private"
+			"ComputeShader/Private",
+			//"RedShiftComputeShader/Private",
 		});
 		if (Target.bBuildEditor == true)
 		{

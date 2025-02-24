@@ -4,6 +4,7 @@
 #include "ComputeTestActor.h"
 
 #include "ExampleComputeShader/ExampleComputeShader.h"
+#include "RedShiftComputeShader/RedShiftComputeShader.h"
 
 
 // Sets default values
@@ -35,10 +36,17 @@ void AComputeTestActor::Tick(float DeltaTime)
 	// UE_LOG(LogTemp, Log, TEXT("Compute Shader Output: %d\n"), Params.Output);
 
 
-	FExampleComputeShaderInterface::Dispatch(Params, [](int output_val)
-	{
-		UE_LOG(LogTemp, Log, TEXT("Compute Shader Output: %d\n"), output_val);
+	FExampleComputeShaderInterface::Dispatch(Params, [](int output_val) {
+		UE_LOG(LogTemp, Log, TEXT("Example Compute Shader Output: %d\n"), output_val);
 	});
 
+
+	FRedShiftComputeShaderDispatchParams redshift_params(1, 1, 1);
+	redshift_params.Input[0] = 5;
+	redshift_params.Input[1] = 10;
+
+	FRedShiftComputeShaderInterface::Dispatch(redshift_params, [](int output_val) {
+		UE_LOG(LogTemp, Log, TEXT("RedShift Compute Shader Output: %d\n"), output_val);
+	});
 }
 

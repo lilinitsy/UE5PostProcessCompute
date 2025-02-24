@@ -14,6 +14,9 @@
 
 #define LOCTEXT_NAMESPACE "FComputeShader"
 
+
+// Don't need to add a new startupmodule for other shaders within
+
 void FComputeShader::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
